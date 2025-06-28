@@ -8,7 +8,7 @@ React4回目に作ったアプリです。
 https://memo2-app.vercel.app/
 
 【技術スタック】  
-フロントエンド: React, TypeScript,Vite, React Hook Form  
+フロントエンド: React, TypeScript, Vite, React Hook Form  
 デプロイ・インフラ: Vercel, Vercelの環境変数設定  
 バックエンド：Firebase  
 バージョン管理: Git, GitHub  
