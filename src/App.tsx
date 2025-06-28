@@ -1,35 +1,40 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { useState } from "react";
+import PostForm from "./components/PostForm";
+import PostList from "./components/PostList";
+import Auth from "./components/Auth";
+import type { User } from "firebase/auth";
+import "./App.css";
+import { auth } from "./firebase";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [user, setUser] = useState<User | null>(null);
+
+  const handleLogin = (loggedInUser: User) => {
+    setIsLoggedIn(true);
+    setUser(loggedInUser);
+  };
+
+  const handleLogout = () => {
+    setIsLoggedIn(false);
+    setUser(null);
+  };
 
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    <div className="App">
+      <h1>memo2-app</h1>
+      <h2>firebase版</h2>
+      <Auth onLogin={handleLogin} onLogout={handleLogout} />
+      {isLoggedIn ? (
+        <PostForm />
+      ) : (
+        <div>
+          <p>投稿するにはログインしてください。</p>
+        </div>
+      )}
+      {user && <PostList auth={auth} />}
+    </div>
+  );
 }
 
-export default App
+export default App;

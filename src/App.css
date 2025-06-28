@@ -1,42 +1,65 @@
+body {
+  margin: 0;
+  padding: 20px;
+}
 #root {
-  max-width: 1280px;
+  width: 100%;
+  box-sizing: border-box;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  padding: 0;
 }
-
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
+h2 {
+  margin: 0;
+  padding: 0 0 20px;
 }
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
+.loginForm {
+  margin-bottom: 20px;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+  box-sizing: border-box;
 }
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+.App button {
+  margin: 0 auto;
+  display: block;
 }
-
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.loginForm > div {
+  text-align: center;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.loginForm div {
+  text-align: left;
 }
-
-.card {
-  padding: 2em;
+.loginForm h3 {
+  margin: 0 auto 10px;
+  width: max-content;
 }
-
-.read-the-docs {
-  color: #888;
+.App form {
+  text-align: left;
+}
+.loginForm input {
+  box-sizing: border-box;
+}
+.App input,
+.App textarea {
+  box-sizing: border-box;
+}
+.memoList {
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+.memoList li {
+  text-align: left;
+}
+.loginButton {
+  display: flex;
+  gap: 10px;
+  flex-direction: row;
+  width: max-content;
+  justify-content: center;
+  align-items: center;
+  margin: 20px auto 0;
 }
