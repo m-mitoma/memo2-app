@@ -22,7 +22,7 @@ function App() {
 
   return (
     <div className="App">
-      <h1>memo2-app</h1>
+      <h1>メモアプリ</h1>
       <h2>firebase版</h2>
       <Auth onLogin={handleLogin} onLogout={handleLogout} />
       {isLoggedIn ? (
